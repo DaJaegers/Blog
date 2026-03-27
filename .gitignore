@@ -1,0 +1,29 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database and Instance folder (Flash/SQLAlchemy)
+instance/
+*.db
+*.sqlite3
+
+# Environment Variables
+.env
+
+# IDE / Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
