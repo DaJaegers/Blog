@@ -99,7 +99,7 @@ def register():
     form = RegisterForm()
     if form.validate_on_submit():
         name = form.name.data
-        email = form.email.data
+        email = form.email.data.lower()
         password = form.password.data
         hash_password = generate_password_hash(password,method='pbkdf2:sha256', salt_length=8)
         new_user = User(name=name, email=email, password=hash_password)
@@ -119,7 +119,7 @@ def register():
 def login():
     form = LoginForm()
     if request.method == "POST":
-        email = request.form.get('email')
+        email = request.form.get('email').lower()
         password = request.form.get('password')
         user = db.session.execute(db.select(User).where(User.email == email)).scalar()
         if user:
